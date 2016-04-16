@@ -6,7 +6,7 @@ require './configuration/compile.php';
 require './functions/compile.php';
 require './views/compile.php';
 if (empty(getCurrentUri()[0])) {
-  include("homepage.html");
+  require "homepage.html";
   exit();
 }
 showHeader();
