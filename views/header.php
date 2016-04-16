@@ -41,6 +41,9 @@ function showHeader() {
         color: #666;
         padding: 5%;
       }
+      table.table-hover tr:hover {
+        background-color: #222;
+      }
       </style>
 
   </head>
@@ -71,7 +74,7 @@ function showHeader() {
                           <a href="./search">Search</a>
                       </li>
                       <li class="page-scroll">
-                          <a href="./table">Table</a>
+                          <a href="./table">Table Data</a>
                       </li>
                       <li class="page-scroll">
                           <a href="./graph">Graph</a>
