@@ -18,7 +18,7 @@ function showHeader() {
           <a class="navbar-brand" href="./">Presky</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="./">Home</a></li>
+          <li><a href="./">Home</a></li>
           <li><a href="./login">Log In</a></li>
           <li><a href="./register">Register</a></li>
           <li><a href="#">Page 3</a></li>
