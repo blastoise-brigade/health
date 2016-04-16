@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+ob_start();
 require './views/compile.php';
 
 showHeader();
@@ -10,6 +12,9 @@ else {
   switch(getCurrentUri()[0]) {
     case "login":
       showLogin();
+      break;
+    default:
+      show404();
       break;
   }
 }
