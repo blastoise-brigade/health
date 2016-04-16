@@ -6,8 +6,8 @@ require './configuration/compile.php';
 require './functions/compile.php';
 require './views/compile.php';
 if (empty(getCurrentUri()[0])) {
-  require "homepage.html";
-  exit();
+  include("homepage.html");
+  die();
 }
 showHeader();
 else {
