@@ -24,7 +24,7 @@ function showLogin() {
        </div>
        <div class="modal-body">
          <p>Please input your email address here.</p>
-         <form action="./ssoLogin" method="post">
+         <form action="./login" method="post">
            <div class="form-group">
              <label for="email">Email address:</label>
              <input type="email" name="email" class="form-control" id="email">
