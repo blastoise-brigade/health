@@ -5,11 +5,11 @@ ob_start();
 require './configuration/compile.php';
 require './functions/compile.php';
 require './views/compile.php';
-
-showHeader();
 if (empty(getCurrentUri()[0])) {
-  showHome();
+  include("homepage.html");
+  exit();
 }
+showHeader();
 else {
   switch(getCurrentUri()[0]) {
     case "logout":

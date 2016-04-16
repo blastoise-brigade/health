@@ -40,7 +40,8 @@ hr.star-light,
 hr.star-primary,
 hr.star-alt,
 hr.star-final,
-hr.star-modal {
+hr.star-modal,
+hr.star-dark {
     margin: 25px auto 30px;
     padding: 0;
     max-width: 250px;
@@ -53,7 +54,8 @@ hr.star-light:after,
 hr.star-primary:after,
 hr.star-alt:after,
 hr.star-final:after,
-hr.star-modal:after {
+hr.star-modal:after,
+hr.star-dark:after {
     content: "\f005";
     display: inline-block;
     position: relative;
@@ -70,6 +72,15 @@ hr.star-light {
 hr.star-light:after {
     color: #fff;
     background-color: #1995AD;
+}
+
+hr.star-dark {
+    border-color: #fff;
+}
+
+hr.star-dark:after {
+    color: #fff;
+    background-color: #30c486;
 }
 
 hr.star-primary {
@@ -231,6 +242,20 @@ section.success a:hover,
 section.success a:focus,
 section.success a:active,
 section.success a.active {
+    outline: 0;
+    color: #2c3e50;
+}
+
+section.failure {
+    color: #fff;
+    background: #30c486;
+}
+
+section.failure a,
+section.failure a:hover,
+section.failure a:focus,
+section.failure a:active,
+section.failure a.active {
     outline: 0;
     color: #2c3e50;
 }
