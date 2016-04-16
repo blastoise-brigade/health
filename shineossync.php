@@ -1,5 +1,5 @@
 <?php
-
+$medsarray = array();
 require './configuration/compile.php';
 require './functions/compile.php';
 function getVisitsList() {
@@ -59,6 +59,38 @@ function getPatientLocationInfo($pid) {
   );
 }
 
+function getPatientMedications($hid, $location_info) {
+  $medArray = array();
+  $cu = curl_init();
+  $url = "http://shine.ph/emr/api/healthcareservices/healthcaretypeByHealthcareserviceid?healthcaretype=medicalOrders&healthcareservice_id=".$hid;
+  $curlArgs = array(
+    CURLOPT_URL => $url,
+    CURLOPT_HTTPHEADER => array(
+      "ShineKey: 7480178111108080909110423",
+      "ShineSecret: 9587353111108080909112508"
+    ),
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_CONNECTTIMEOUT => 10,
+    CURLOPT_SSL_VERIFYPEER => 0,
+    CURLOPT_SSL_VERIFYHOST => 0
+  );
+  curl_setopt_array($cu, $curlArgs);
+  $var = json_decode(curl_exec($cu), TRUE);
+  if (!empty($var['data'][0]['medical_order_prescription'])) {
+    for ($o = 0; $o < count($var['data'][0]['medical_order_prescription']); $o++) {
+      array_push($medArray, array(
+        "generic_name" => $var['data'][0]['medical_order_prescription'][$o]['generic_name'],
+        "brand_name" => $var['data'][0]['medical_order_prescription'][$o]['brand_name'],
+        "total_quantity" => $var['data'][0]['medical_order_prescription'][$o]['total_quantity'],
+        "city_code" => $location_info['city'],
+        "province_code" => $location_info['province'],
+        "region_code" => $location_info['region']
+      ));
+    }
+  }
+  return $medArray;
+}
+
 $list = getVisitsList();
 $token = generateRandomString();
 $query1 = mysqli_query($db, "INSERT INTO ps_sync (totalvisits, token) VALUES (".$list[0]['data']['total'].", '$token')");
@@ -94,7 +126,24 @@ for ($i = 0; $i < count($list); $i++) {
     '".$location_info['region']."'
     )
     ");
+    $meds = getPatientMedications($list[$i]['data']['data'][$j]['healthcareservice_id'], $location_info);
+    if (!empty($meds)) {
+      array_push($medsarray, $meds);
+    }
   }
 }
+$query6 = mysqli_query($db, "CREATE TABLE `ps_sync_".$query3['id']."_medication` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `generic_name` tinytext COLLATE utf8_unicode_ci,
+  `brand_name` tinytext COLLATE utf8_unicode_ci,
+  `total_quantity` tinytext COLLATE utf8_unicode_ci,
+  `city_code` int(11) DEFAULT NULL,
+  `province_code` int(11) DEFAULT NULL,
+  `region_code` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)");
 
+for ($i = 0; $i < count($medsarray); $i++) {
+  $query7 = mysqli_query($db, "INSERT INTO ps_sync_".$query3['id']."_medication (generic_name, brand_name, total_quantity, city_code, province_code, region_code) VALUES (".$medsarray[$i]['generic_name'].", ".$medsarray[$i]['brand_name'].", ".$medsarray[$i]['total_quantity'].", ".$medsarray[$i]['city_code'].", ".$medsarray[$i]['province_code'].", ".$medsarray[$i]['region_code'].")");
+}
 ?>
