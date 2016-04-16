@@ -4,14 +4,13 @@ function showLogin() {
  ?>
  <div class="container">
    <div class="row">
-     <div class="col-md-6">
-      <img src="https://c1.staticflickr.com/7/6101/6306512682_28c5b42b8f_z.jpg" />
-     </div>
      <div class="col-md-4">
-       <h1>Login Using:</h1>
+       <h1 style="color: #fff"; font-family="Montserrat"; font-size="71px">Login Using:</h1>
        <button class="btn btn-default" data-toggle="modal" data-target="#ssoModal"><i class="fa fa-envelope"></i> SSO (Single Sign On) Link</button>
      </div>
      <div class="col-md-2">
+     </div>
+     <div class="col-md-6">
      </div>
    </div>
   </div>
