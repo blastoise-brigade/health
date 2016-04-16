@@ -15,7 +15,6 @@ function curlToServer($service, $function) {
           "subject" => "Your SSO Login Link for Presky",
           "html" => "<h1>Presky</h1><hr><p><button><a href='http://".$_SERVER['SERVER_NAME']."/login/".$function."'>Sign In</a></button></p>"
         ),
-        CURLOPT_URL => $url,
         CURLOPT_RETURNTRANSFER => 1,
         CURLOPT_CONNECTTIMEOUT => 10,
         CURLOPT_SSL_VERIFYPEER => 0,
