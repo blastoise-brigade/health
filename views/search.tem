@@ -1,0 +1,20 @@
+
+    <!-- Search Section -->
+    <section class="success" id="Search">
+      <div class="container">
+        <div class="row">
+          <br><br>
+          <h2>Location</h2>
+            <div id="custom-search-input">
+              <div class="input-group col-md-12">
+                <input type="text" class="  search-query form-control" placeholder="Search" />
+                <span class="input-group-btn">
+                  <button class="btn btn-danger" type="button">
+                    <span class=" glyphicon glyphicon-search"></span>
+                  </button>
+                </span>
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>

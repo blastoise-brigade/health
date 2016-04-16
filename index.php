@@ -7,14 +7,14 @@ require './functions/compile.php';
 require './views/compile.php';
 if (empty(getCurrentUri()[0])) {
   if (isset($_SESSION['ps_id'])) {
-
+    showHeader();
+    include("./views/adminpanel.tem");
   }
   else {
-    include("homepage.html");
+    include("./views/homepage.tem");
   }
 }
 else {
-  showHeader();
   switch(getCurrentUri()[0]) {
     case "logout":
       session_unset("ps_id");
@@ -31,11 +31,17 @@ else {
       }
       break;
 
+    case "search":
+      showHeader();
+      include("./views/search.tem");
+      break;
+
     default:
       show404();
       break;
   }
-  showFooter();
 }
+
+showFooter();
 
 ?>
