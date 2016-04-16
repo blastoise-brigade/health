@@ -3,9 +3,18 @@
 function showLogin() {
  ?>
  <div class="container">
-   <h1>Login Using:</h1>
-   <button class="btn btn-default" data-toggle="modal" data-target="#ssoModal"><i class="fa fa-envelope"></i> SSO (Single Sign On) Link</button>
- </div>
+   <div class="row">
+     <div class="col-md-6">
+      <img src="https://c1.staticflickr.com/7/6101/6306512682_28c5b42b8f_z.jpg" />
+     </div>
+     <div class="col-md-4">
+       <h1>Login Using:</h1>
+       <button class="btn btn-default" data-toggle="modal" data-target="#ssoModal"><i class="fa fa-envelope"></i> SSO (Single Sign On) Link</button>
+     </div>
+     <div class="col-md-2">
+     </div>
+   </div>
+  </div>
  <div id="ssoModal" class="modal fade" role="dialog">
    <div class="modal-dialog">
      <div class="modal-content">
