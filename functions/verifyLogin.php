@@ -10,6 +10,7 @@ function verifyLogin($db) {
       if (mysqli_num_rows($query1) == 1) {
         $query2 = mysqli_fetch_array($query1);
         $_SESSION['ps_id'] = $query2['id'];
+        $query3 = mysqli_query($db, "UPDATE ps_user SET token=NULL WHERE id='".$query2['id']."'");
         header("Location: ../");
       }
       else {

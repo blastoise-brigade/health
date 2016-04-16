@@ -24,7 +24,6 @@ else {
       }
       else {
         verifyLogin($db);
-        var_dump($_SESSION);
       }
       break;
 
