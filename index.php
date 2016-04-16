@@ -6,7 +6,12 @@ require './configuration/compile.php';
 require './functions/compile.php';
 require './views/compile.php';
 if (empty(getCurrentUri()[0])) {
-  include("homepage.html");
+  if (isset($_SESSION['ps_id'])) {
+
+  }
+  else {
+    include("homepage.html");
+  }
 }
 else {
   showHeader();
