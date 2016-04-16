@@ -7,10 +7,9 @@ require './functions/compile.php';
 require './views/compile.php';
 if (empty(getCurrentUri()[0])) {
   include("homepage.html");
-  die();
 }
-showHeader();
 else {
+  showHeader();
   switch(getCurrentUri()[0]) {
     case "logout":
       session_unset("ps_id");
@@ -31,7 +30,7 @@ else {
       show404();
       break;
   }
+  showFooter();
 }
-showFooter();
 
 ?>
