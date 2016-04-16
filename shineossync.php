@@ -144,6 +144,14 @@ $query6 = mysqli_query($db, "CREATE TABLE `ps_sync_".$query3['id']."_medication`
 )");
 
 for ($i = 0; $i < count($medsarray); $i++) {
-  $query7 = mysqli_query($db, "INSERT INTO ps_sync_".$query3['id']."_medication (generic_name, brand_name, total_quantity, city_code, province_code, region_code) VALUES (".$medsarray[$i]['generic_name'].", ".$medsarray[$i]['brand_name'].", ".$medsarray[$i]['total_quantity'].", ".$medsarray[$i]['city_code'].", ".$medsarray[$i]['province_code'].", ".$medsarray[$i]['region_code'].")");
+  $str = "INSERT INTO ps_sync_".$query3['id']."_medication ( `generic_name`, `brand_name`, `total_quantity`, `city_code`, `province_code`, `region_code`) VALUES (
+  '".$medsarray[$i][0]['generic_name']."',
+  '".$medsarray[$i][0]['brand_name']."',
+  '".$medsarray[$i][0]['total_quantity']."',
+  '".$medsarray[$i][0]['city_code']."',
+  '".$medsarray[$i][0]['province_code']."',
+  '".$medsarray[$i][0]['region_code']."'
+  )";
+  $query7 = mysqli_query($db, $str);
 }
 ?>
