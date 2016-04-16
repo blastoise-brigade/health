@@ -32,6 +32,6 @@ function getVisitsList() {
 
   return json_encode($arrayvar);
 }
-getVisitsList();
+echo getVisitsList();
 
 ?>
