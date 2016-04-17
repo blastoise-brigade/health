@@ -1,16 +1,22 @@
 <?php
 
 function curlToServer($service, $function) {
+
+  // Mailgun API Information Goes Here
+  $mailgun_domain = "mg.phillytan.me";
+  $mailgun_api_key = "api:key-22ed40b32f59bbc35ef31261abf1ee9c";
+  $presky_dedicated_email = "noreply@presky.phillytan.me";
+
   $cu = curl_init();
   switch ($service) {
     case "mailgun":
-      $url = "https://api.mailgun.net/v2/mg.phillytan.me/messages";
+      $url = "https://api.mailgun.net/v2/".$mailgun_domain."/messages";
       $curlArgs = array(
         CURLOPT_URL => $url,
         CURLOPT_HTTPAUTH => CURLAUTH_BASIC,
-        CURLOPT_USERPWD => "api:key-22ed40b32f59bbc35ef31261abf1ee9c",
+        CURLOPT_USERPWD => $mailgun_api_key,
         CURLOPT_POSTFIELDS => array(
-          "from" => "Presky <noreply@presky.phillytan.me>",
+          "from" => "Presky <".$presky_dedicated_email.">",
           "to" => $_POST['email'],
           "subject" => "Your SSO Login Link for Presky",
           "html" => "<h1>Presky</h1><hr><p><button><a href='http://".$_SERVER['SERVER_NAME']."/login/".$function."'>Sign In</a></button></p>"
