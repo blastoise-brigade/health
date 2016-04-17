@@ -77,7 +77,7 @@ function showHeader() {
                           <a href="./table">Table Data</a>
                       </li>
                       <li class="page-scroll">
-                          <a href="./graph">Graph</a>
+                          <a href="./graph.html">Graph</a>
                       </li>
                       <li class="page-scroll">
                           <a href="./logout">Log Out</a>
