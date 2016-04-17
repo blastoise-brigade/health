@@ -7,12 +7,12 @@
           <h2>Location</h2>
             <div id="custom-search-input">
               <div class="input-group col-md-12">
-                <input type="text" class="  search-query form-control" placeholder="Search" />
-                <span class="input-group-btn">
-                  <button class="btn btn-danger" type="button">
-                    <span class=" glyphicon glyphicon-search"></span>
-                  </button>
-                </span>
+                <form action="./search" method="post">
+                  <input type="text" name="query" class="  search-query form-control" placeholder="Search" />
+                  <span class="input-group-btn">
+                    <input type="submit" class="btn btn-success" type="button" values="<span class=' glyphicon glyphicon-search'></span>" />
+                  </span>
+                </form>
               </div>
             </div>
             <br>
