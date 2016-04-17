@@ -14,7 +14,7 @@ In order for you to install Presky, your server would need to have the following
 * PHP Version 5.6 or Higher
 * MySQL Server Version 5 or Higher
 
-In addition to that, you would need to set up your MySQL Database through this file saved at `configuration/db.php` by editing with your own database information.
+In addition to that, you would need to set up your MySQL Database through this file saved at `configuration/db.php` by editing with your own database information. Note that you would have to first insert the `setup.sql` file into your database for Presky to initialize properly.
 
 ## Additional notes regarding the installation
 
