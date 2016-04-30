@@ -1,3 +1,7 @@
 {
-  
+  "name": "blastoise-brigade/presky",
+  "description": "Collect and visualize pharmaceutical data! Be able to learn the trends of drugs that are being prescribed to be able to forecast supply and demand to prevent wastage.",
+  "version": "1.0.1-dev",
+  "type": "project",
+  "license": "MIT"
 }
