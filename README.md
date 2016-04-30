@@ -2,7 +2,7 @@
 
 Collect and visualize pharmaceutical data! Be able to learn the trends of drugs that are being prescribed to be able to forecast supply and demand to prevent wastage.
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&maxAge=2592000)]()
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&maxAge=2592000)](https://github.com/blastoise-brigade/presky/blob/master/LICENSE.md)
 [![Download Presky](https://img.shields.io/badge/Download-1.1mb-07575B.svg?style=flat-square)](https://github.com/blastoise-brigade/presky/archive/master.zip)
 [![Current Release](https://img.shields.io/badge/Current Release:-Version 1.0-78A5A3.svg?style=flat-square)](https://github.com/blastoise-brigade/presky/releases/tag/v1.0)
 [![Server](https://img.shields.io/badge/Presky Cloud Current Deployment Server:-Heroku-664a86.svg?style=flat-square)](https://presky.herokuapp.com)
