@@ -77,7 +77,8 @@ function getPatientMedications($hid, $location_info) {
   curl_setopt_array($cu, $curlArgs);
   $var = json_decode(curl_exec($cu), TRUE);
   if (!empty($var['data'][0]['medical_order_prescription'])) {
-    for ($o = 0; $o < count($var['data'][0]['medical_order_prescription']); $o++) {
+    $count1 = count($var['data'][0]['medical_order_prescription']);
+    for ($o = 0; $o < $count1; $o++) {
       array_push($medArray, array(
         "generic_name" => $var['data'][0]['medical_order_prescription'][$o]['generic_name'],
         "brand_name" => $var['data'][0]['medical_order_prescription'][$o]['brand_name'],
@@ -107,8 +108,10 @@ $query5 = mysqli_query($db, "CREATE TABLE `ps_sync_".$query3['id']."` (
   `region_code` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 )");
-for ($i = 0; $i < count($list); $i++) {
-  for ($j = 0; $j < count($list[$i]['data']['data']); $j++) {
+$count2 = count($list);
+$count3 = count($list[$i]['data']['data']);
+for ($i = 0; $i < $count2; $i++) {
+  for ($j = 0; $j < $count3; $j++) {
     $location_info = getPatientLocationInfo($list[$i]['data']['data'][$j]['patient_id']);
     $query = mysqli_query($db, "INSERT INTO ps_sync_".$query3['id']." (
     patient_id,
@@ -142,8 +145,8 @@ $query6 = mysqli_query($db, "CREATE TABLE `ps_sync_".$query3['id']."_medication`
   `region_code` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 )");
-
-for ($i = 0; $i < count($medsarray); $i++) {
+$count4 = count($medsarray);
+for ($i = 0; $i < $count4; $i++) {
   $str = "INSERT INTO ps_sync_".$query3['id']."_medication ( `generic_name`, `brand_name`, `total_quantity`, `city_code`, `province_code`, `region_code`) VALUES (
   '".$medsarray[$i][0]['generic_name']."',
   '".$medsarray[$i][0]['brand_name']."',
