@@ -3,9 +3,13 @@
 Collect and visualize pharmaceutical data! Be able to learn the trends of drugs that are being prescribed to be able to forecast supply and demand to prevent wastage.
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&maxAge=2592000)](https://github.com/blastoise-brigade/presky/blob/master/LICENSE.md)
-[![Download Presky](https://img.shields.io/badge/Download-1.1mb-07575B.svg?style=flat-square)](https://github.com/blastoise-brigade/presky/archive/master.zip)
-[![Current Release](https://img.shields.io/badge/Current Release:-Version 1.0-78A5A3.svg?style=flat-square)](https://github.com/blastoise-brigade/presky/releases/tag/v1.0)
+[![Download Presky](https://img.shields.io/badge/Download-48kb-07575B.svg?style=flat-square)](https://github.com/blastoise-brigade/presky/archive/master.zip)
+[![GitHub release](https://img.shields.io/github/release/blastoise-brigade/presky.svg?maxAge=2592000&style=flat-square)](https://github.com/blastoise-brigade/presky/releases/)
 [![Server](https://img.shields.io/badge/Presky Cloud Current Deployment Server:-Heroku-664a86.svg?style=flat-square)](https://presky.herokuapp.com)
+
+## Current Development Phase
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/f91ce4b6-1d31-471e-bd28-06cd94d13fa4.svg?maxAge=2592000&style=flat-square)](https://insight.sensiolabs.com/projects/f91ce4b6-1d31-471e-bd28-06cd94d13fa4)
+[![Travis](https://img.shields.io/travis/blastoise-brigade/presky.svg?maxAge=2592000&style=flat-square)](https://travis-ci.org/blastoise-brigade/presky)
 
 ## Some Screenshots:
 ![](https://dl2.pushbulletusercontent.com/ZrdiqKafeEPlVARSQRMAbGfQ4qnzBQ1X/Screen%20Shot%202016-04-17%20at%2010.36.27%20AM.png)
