@@ -1,3 +1,4 @@
 /vendor/
+/oldFiles/
 composer.phar
 composer-setup.php
