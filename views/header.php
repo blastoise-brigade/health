@@ -17,14 +17,15 @@ function showHeader() {
       <title>Presky Admin Panel</title>
 
       <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-      <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-XYCjB+hFAjSbgf9yKUgbysEjaVLOXhCgATTEBpCqT1R3jvG5LGRAK5ZIyRbH5vpX" crossorigin="anonymous">
 
       <!-- Custom CSS -->
-      <link href="assets/css/freelancer.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://dl2.pushbulletusercontent.com/IXrutv9uKLAYw7vsLeXCPQZruM7b29zP/freelancer.css">
 
       <!-- Custom Fonts -->
-      <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-      <link href="assets/css/customFonts.css" rel="stylesheet" type="text/css">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-aNUYGqSUL9wG/vP7+cWZ5QOM4gsQou3sBfWRr/8S3R1Lv0rysEmnwsRKMbhiQX/O" crossorigin="anonymous">
+      <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

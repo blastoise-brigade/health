@@ -12,14 +12,15 @@
     <title>Presky</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-XYCjB+hFAjSbgf9yKUgbysEjaVLOXhCgATTEBpCqT1R3jvG5LGRAK5ZIyRbH5vpX" crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <link href="assets/css/freelancer.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://dl2.pushbulletusercontent.com/IXrutv9uKLAYw7vsLeXCPQZruM7b29zP/freelancer.css">
 
     <!-- Custom Fonts -->
-    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/customFonts.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-aNUYGqSUL9wG/vP7+cWZ5QOM4gsQou3sBfWRr/8S3R1Lv0rysEmnwsRKMbhiQX/O" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,7 +30,7 @@
     <![endif]-->
     <style>
     header {
-      background-image: url("./assets/user-cover.png");
+      background-image: url("https://dl2.pushbulletusercontent.com/ENNN66o95esCqKZ61iTXP1CHa9ab2QmS/user-cover.png");
     }
     span.glyphcustom {
       font-size: 126px;
@@ -153,8 +154,7 @@
               <center>
                 <img src="https://scontent.fmnl4-2.fna.fbcdn.net/hphotos-xft1/v/t1.0-9/1239397_10153675188230485_5373426042622193397_n.jpg?oh=26f123636c07e1c87d9d4d81f8763d6d&oe=57AD1E95" width="200" height="200" hspace="50"></img>
                 <p>Kyle Tan</p><br>
-                <p>Kyle is a freshman at the University of the Philippines - Diliman. He was inspired by his late dad who passed due to lung cancer to create new solutions in healthcare. He seeks to uplift and empower both himself and other people to bring change in the Philippines.
-</p>
+                <p>Kyle is a freshman at the University of the Philippines - Diliman. He was inspired by his late dad who passed due to lung cancer to create new solutions in healthcare. He seeks to uplift and empower both himself and other people to bring change in the Philippines.</p>
               </center>
             </div>
           </div>
