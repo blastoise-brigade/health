@@ -28,6 +28,10 @@ $container['db'] = function($c) {
   return $capsule;
 };
 
+$container['flash'] = function ($c) {
+    return new \Slim\Flash\Messages();
+};
+
 $container['mailgun'] = function ($c) {
   $client = new \Http\Adapter\Guzzle6\Client();
   return new Mailgun\Mailgun($c['config']->get("mailgun.private_api_key"), $client);

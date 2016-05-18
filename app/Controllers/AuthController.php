@@ -14,11 +14,46 @@ class AuthController extends BaseController {
     return $function;
   }
 
+  private function formFlashArray($messages) {
+    $messageArray = array();
+    if (isset($messages['error'])) {
+      array_push($messageArray, array(
+        "messageType" => "error",
+        "messageArray" => $messages['error']
+      ));
+    }
+    if (isset($messages['warning'])) {
+      array_push($messageArray, array(
+        "messageType" => "warning",
+        "messageArray" => $messages['warning']
+      ));
+    }
+    if (isset($messages['good'])) {
+      array_push($messageArray, array(
+        "messageType" => "good",
+        "messageArray" => $messages['good']
+      ));
+    }
+    return $messageArray;
+  }
+
   public function showLoginForm($request, $response, $args) {
-    return $this->view->render($response, 'login.twig', array(
-      "showForm" => true,
-      "mainText" => "Login using:"
-    ));
+    $messages = $this->flash->getMessages();
+    if (count($messages) != 0) {
+      $messageArray = $this->formFlashArray($messages);
+      $renderArray = array(
+        "showForm" => true,
+        "flash" => true,
+        "flashMessages" => $messageArray
+      );
+    }
+    else {
+      $renderArray = array(
+        "showForm" => true,
+        "flash" => false
+      );
+    }
+    return $this->view->render($response, 'login.twig', $renderArray);
   }
 
   public function verifyEmailAddress($request, $response, $args) {
@@ -34,16 +69,12 @@ class AuthController extends BaseController {
         'subject' => 'Your SSO Login Link for Presky',
         'html'    => "<h1>Presky</h1><hr><p><button><a href='http://".$_SERVER['SERVER_NAME']."/login/".$function."'>Sign In</a></button></p>"
       ));
-      return $this->view->render($response, 'login.twig', array(
-        "showForm" => false,
-        "mainText" => "An email has been sent to: " . $email
-      ));
+      $this->flash->addMessage('warning', 'A Verification Email has been sent to: '.$email);
+      return $response->withRedirect($this->router->pathFor("auth.signin"));
     }
     else {
-      return $this->view->render($response, 'login.twig', array(
-        "showForm" => true,
-        "mainText" => "The user specified is not found nor authorized to access."
-      ));
+      $this->flash->addMessage('error', 'The user specified is not found nor authorized to access.');
+      return $response->withRedirect($this->router->pathFor("auth.signin"));
     }
   }
 
@@ -60,15 +91,14 @@ class AuthController extends BaseController {
       ));
     }
     else {
-      return $this->view->render($response, 'login.twig', array(
-        "showForm" => true,
-        "mainText" => "Error: Invalid SSO Token"
-      ));
+      $this->flash->addMessage('error', 'Invalid SSO Token');
+      return $response->withRedirect($this->router->pathFor("auth.signin"));
     }
   }
 
   public function signout($request, $response, $args) {
     unset($_SESSION['ps_id']);
+    $this->flash->addMessage('warning', 'You have been logged out.');
     return $response->withRedirect($this->router->pathFor("auth.signin"));
   }
 
