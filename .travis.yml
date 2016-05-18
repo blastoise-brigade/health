@@ -1,0 +1,15 @@
+language: php
+php:
+  - '5.6'
+  - '7.0'
+  - hhvm
+  - nightly
+
+install:
+   - composer install
+   - cd app
+   - cd Controllers
+
+script:
+  - phpunit AuthController.php
+  - phpunit HomeController.php

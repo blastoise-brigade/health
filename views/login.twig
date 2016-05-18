@@ -61,7 +61,7 @@
        </div>
        <div class="modal-body">
          <p>Please input your email address here.</p>
-         <form action="./login" method="post">
+         <form action="{{ path_for('auth.signin') }}" method="post">
            <div class="form-group">
              <label for="email">Email address:</label>
              <input type="email" name="email" class="form-control" id="email">

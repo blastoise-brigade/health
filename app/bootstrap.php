@@ -44,6 +44,14 @@ $container['view'] = function ($c) {
   return $view;
 };
 
+$container['AuthController'] = function ($c) {
+  return new \App\Controllers\AuthController($c);
+};
+
+$container['HomeController'] = function ($c) {
+  return new \App\Controllers\HomeController($c);
+};
+
 $app = new \Slim\App($container);
 
 require 'routes.php';
