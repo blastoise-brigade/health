@@ -7,7 +7,7 @@ php:
 
 install:
    - composer install
+   - cd public
 
 script:
-  - phpunit ./app/Controllers/AuthController.php
-  - phpunit ./app/Controllers/HomeController.php
+  - phpunit index.php
