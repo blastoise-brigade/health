@@ -76,7 +76,7 @@
                         <a href="./graph.html">Graph</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="./logout">Log Out</a>
+                        <a href="{{ path_for('auth.signout') }}">Log Out</a>
                     </li>
                 </ul>
             </div>
@@ -102,8 +102,8 @@
     };
   </script>
 
-  [ block content ]
-  [ endblock ]
+  {% block content %}
+  {% endblock %}
 
   <!-- Footer -->
   <footer class="text-center" id="footer">

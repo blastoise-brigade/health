@@ -85,10 +85,8 @@ class AuthController extends BaseController {
     if ($userCount == 1) {
       $_SESSION['ps_id'] = $user->id;
       $this->db->table("user")->where("token", $token)->update(["token" => NULL]);
-      return $this->view->render($response, 'login.twig', array(
-        "showForm" => false,
-        "mainText" => "You are logged in."
-      ));
+      $this->flash->addMessage('good', 'You are looged in.');
+      return $response->withRedirect($this->router->pathFor("home"));
     }
     else {
       $this->flash->addMessage('error', 'Invalid SSO Token');
