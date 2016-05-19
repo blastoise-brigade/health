@@ -85,7 +85,7 @@ class AuthController extends BaseController {
     if ($userCount == 1) {
       $_SESSION['ps_id'] = $user->id;
       $this->db->table("user")->where("token", $token)->update(["token" => NULL]);
-      $this->flash->addMessage('good', 'You are looged in.');
+      $this->flash->addMessage('good', 'You are logged in.');
       return $response->withRedirect($this->router->pathFor("home"));
     }
     else {
