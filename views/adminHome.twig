@@ -1,7 +1,10 @@
 {% extends "base.twig" %}
 {% block content %}
-    <section class="success" id="Welcome" style="padding-left: 5%;">
-    <br><br><h2>Welcome!</h2>
+    <section class="success" id="Welcome" style="padding-left: 5%; padding-right: 5%;">
+      <br><br>
+      {% if flash == true %}
+          {% include "partials/flashMessage.twig" %}
+      {% endif %}<h2>Welcome!</h2>
     <p>Here is the overview of the amount of drugs prescribed this month in relation to others.</p>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
