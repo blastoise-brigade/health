@@ -9,8 +9,7 @@ $container = new \Slim\Container;
 $container['config'] = function ($c) {
   return new \Noodlehaus\Config(array(
     "../config/db.php",
-    "../config/mailgun.php",
-    "../config/shineos.php"
+    "../config/mailgun.php"
   ));
 };
 
