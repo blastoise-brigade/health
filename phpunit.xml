@@ -1,0 +1,11 @@
+<phpunit backupGlobals="true" bootstrap="./public/index.php">
+  <filter>
+    <whitelist>
+      <directory>./app</directory>
+      <directory>./views</directory>
+    </whitelist>
+  </filter>
+  <testsuite>
+    <directory>./</directory>
+  </testsuite>
+</phpunit>
