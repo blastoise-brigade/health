@@ -14,7 +14,7 @@ class AuthController extends BaseController {
     return $function;
   }
 
-  private function formFlashArray($messages) {
+  public function formFlashArray($messages) {
     $messageArray = array();
     if (isset($messages['error'])) {
       array_push($messageArray, array(
