@@ -10,6 +10,7 @@ $app->group("", function () {
 
 $app->group("", function () {
   $this->get("/logout", "AuthController:signout")->setName("auth.signout");
+  $this->get("/table", "DataViewController:showSyncTable")->setName("view.table");
 })->add(new App\Middleware\AuthMiddleware($container));
 
 ?>
