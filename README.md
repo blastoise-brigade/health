@@ -11,10 +11,9 @@ Collect and visualize pharmaceutical data! Be able to learn the trends of drugs 
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/f91ce4b6-1d31-471e-bd28-06cd94d13fa4.svg?style=flat-square)](https://insight.sensiolabs.com/projects/f91ce4b6-1d31-471e-bd28-06cd94d13fa4)
 [![Travis](https://img.shields.io/travis/blastoise-brigade/presky.svg?maxAge=2592000&style=flat-square)](https://travis-ci.org/blastoise-brigade/presky)
 
-## Some Screenshots:
-![](https://dl2.pushbulletusercontent.com/ZrdiqKafeEPlVARSQRMAbGfQ4qnzBQ1X/Screen%20Shot%202016-04-17%20at%2010.36.27%20AM.png)
-![](https://dl2.pushbulletusercontent.com/5ia2Ck6hfYpxL4mVBegO9MeHv2Xm7yWl/Screen%20Shot%202016-04-17%20at%2010.36.59%20AM.png)
-![](https://dl2.pushbulletusercontent.com/PP1JvmTgVG58rbinDr1RItzYPBeMnGSh/Screen%20Shot%202016-04-17%20at%2010.39.08%20AM.png)
+## Installation of Presky to Cloud Services
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/blastoise-brigade/presky)
 
 ## Installation of Presky into your own PHP servers
 
@@ -28,3 +27,8 @@ In addition to that, you would need to set up your MySQL Database through this f
 ## Additional notes regarding the installation
 
 Bundled with this installation of Presky contains the [Mailgun Rest API](https://mailgun.com). This API is for use of the Secure Sign On Login feature within Presky to enable a secure cloud between the end user and the server. It is highly recommended for you to supply your own API key and information located at `functions/curlToServer.php`.
+
+## Some Screenshots:
+![](https://dl2.pushbulletusercontent.com/ZrdiqKafeEPlVARSQRMAbGfQ4qnzBQ1X/Screen%20Shot%202016-04-17%20at%2010.36.27%20AM.png)
+![](https://dl2.pushbulletusercontent.com/5ia2Ck6hfYpxL4mVBegO9MeHv2Xm7yWl/Screen%20Shot%202016-04-17%20at%2010.36.59%20AM.png)
+![](https://dl2.pushbulletusercontent.com/PP1JvmTgVG58rbinDr1RItzYPBeMnGSh/Screen%20Shot%202016-04-17%20at%2010.39.08%20AM.png)

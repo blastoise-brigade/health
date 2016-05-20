@@ -1,0 +1,16 @@
+{
+  "name": "Presky",
+  "description": "Collect and visualize pharmaceutical data! Be able to learn the trends of drugs that are being prescribed to be able to forecast supply and demand to prevent wastage.",
+  "website": "https://presky.herokuapp.cokm",
+  "repository": "https://github.com/blastoise-brigade/presky",
+  "logo": "https://dl2.pushbulletusercontent.com/OYX4KodlBvBJflQ3iPVm2KpUJBcgENTo/Image.png",
+  "keywords": [
+      "health",
+      "medicine",
+      "php",
+      "pharmaceutical"
+  ],
+  "addons": [
+      "jawsdb:kitefin"
+  ]
+}
