@@ -1,13 +1,16 @@
 <?php
 
+$db_info = parse_url(getenv("JAWSDB_URL"));
+$path = str_replace("/", "", $db_info['path']);
+
 return array(
   "db" => array(
-    "provider" => "mysql",
+    "provider" => $db_info['scheme'],
     "server" => array(
-      "host" => "bqmayq5x95g1sgr9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-      "username" => "detfpwb40jstnbgz",
-      "password" => "w9dessd8ojyz1odj",
-      "database" => "zeg3q5ggmy1skv1d",
+      "host" => $db_info['host'],
+      "username" => $db_info['user'],
+      "password" => $db_info['pass'],
+      "database" => $path,
       "prefix" => "ps_"
     )
   )
