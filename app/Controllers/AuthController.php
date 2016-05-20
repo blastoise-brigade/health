@@ -63,11 +63,15 @@ class AuthController extends BaseController {
     if ($userCount == 1) {
       $function = $this->generateRandomString();
       $this->db->table("user")->where("email", $email)->update(["token" => $function]);
+      $html = $this->view->render($response, 'email.twig', array(
+        "email" => $email,
+        "link" => "http://".$_SERVER['SERVER_NAME']."/login/".$function
+      ));
       $this->mailgun->sendMessage($this->config->get("mailgun.domain"), array(
         'from'    => "Presky <".$this->config->get("mailgun.no_reply_email_address").">",
         'to'      => $email,
         'subject' => 'Your SSO Login Link for Presky',
-        'html'    => "<h1>Presky</h1><hr><p><button><a href='http://".$_SERVER['SERVER_NAME']."/login/".$function."'>Sign In</a></button></p>"
+        'html'    => $html
       ));
       $this->flash->addMessage('warning', 'A Verification Email has been sent to: '.$email);
       return $response->withRedirect($this->router->pathFor("auth.signin"));
