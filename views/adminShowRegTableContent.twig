@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+{% block content %}
+<section class="success" id="Welcome" style="padding-left: 5%; padding-right: 5%;">
+  <br><h1>Viewing Sync Data</h1></br>
+  <table class='table table-hover table-bordered'>
+    <tr style='background-color: #222;'>
+      <th>ID</th>
+      <th>Patient ID</th>
+      <th>HealthCareService ID</th>
+      <th>Date/Time Encountered</th>
+      <th>City</th>
+      <th>Province</th>
+      <th>Region</th>
+    </tr>
+    {% for data in tableData %}
+    <tr>
+      <td>{{ data.id }}</td>
+      <td>{{ data.patient_id }}</td>
+      <td>{{ data.healthcareservice_id }}</td>
+      <td>{{ data.timestamp }}</td>
+      <td>{{ data.city }}</td>
+      <td>{{ data.province }}</td>
+      <td>{{ data.region }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>
+{% endblock %}

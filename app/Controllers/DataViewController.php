@@ -12,14 +12,60 @@ class DataViewController extends BaseController {
       array_push($arrayData, array(
         "id" => $i,
         "totalvisits" => $data->totalvisits,
-        "created_at" => $data->createdat
+        "created_at" => $data->createdat,
+        "tb_id" => $data->id
       ));
       $i++;
     }
-    return $this->view->render($response, 'adminShowSyncTableContent.twig', array(
-      "tableData" => $arrayData
-    ));
+    $messages = $this->flash->getMessages();
+    if (count($messages) != 0) {
+      $messageArray = AuthController::formFlashArray($messages);
+      $renderArray = array(
+        "flash" => true,
+        "flashMessages" => $messageArray,
+        "tableData" => $arrayData
+      );
+    }
+    else {
+      $renderArray = array(
+        "flash" => false,
+        "tableData" => $arrayData
+      );
+    }
+    return $this->view->render($response, 'adminShowSyncTableContent.twig', $renderArray);
+  }
 
+  public function showRegTable($request, $response, $arguments) {
+
+    $id = $request->getAttribute('id');
+    $syncTableInitCount = \App\Models\SyncModel::where("id", $id)->count();
+    if ($syncTableInitCount == 1) {
+      $arrayData = array();
+      $content = $this->db->table("sync_".$id)->get();
+      $i = 1;
+      foreach ($content as $data) {
+        $city = $this->db->table("meta_city")->where("cid", $data->city_code)->first();
+        $province = $this->db->table("meta_province")->where("pid", $data->province_code)->first();
+        $region = $this->db->table("meta_region")->where("rid", $data->region_code)->first();
+        array_push($arrayData, array(
+          "id" => $i,
+          "patient_id" => $data->patient_id,
+          "healthcareservice_id" => $data->healthcareservice_id,
+          "timestamp" => $data->encounter_datetime,
+          "city" => $city->name,
+          "province" => $province->pname,
+          "region" => $region->rname
+        ));
+        $i++;
+      }
+      return $this->view->render($response, 'adminShowRegTableContent.twig', array(
+        "tableData" => $arrayData
+      ));
+    }
+    else {
+      $this->flash->addMessage('error', 'Table not found.');
+      return $response->withRedirect($this->router->pathFor("view.table"));
+    }
   }
 
 }
