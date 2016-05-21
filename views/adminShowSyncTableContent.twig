@@ -1,6 +1,9 @@
 {% extends "base.twig" %}
 {% block content %}
-<section class="success" id="Welcome" style="padding-left: 5%; padding-right: 5%;">
+<section class="success" id="Welcome" style="padding-left: 5%; padding-right: 5%;"><br><br>
+  {% if flash == true %}
+      {% include "partials/flashMessage.twig" %}
+  {% endif %}
   <br><h1>Select Sync Data</h1></br>
   <table class='table table-hover table-bordered'>
     <tr style='background-color: #222;'>
@@ -14,7 +17,7 @@
       <td>{{ data.id }}</td>
       <td>{{ data.totalvisits }}</td>
       <td>{{ data.created_at }}</td>
-      <td><a class="btn btn-success" style="padding: 5px 0px; width: 100%;" href="{{ path_for('view.table') }}/{{ data.id }}">View Table</a></td>
+      <td><a class="btn btn-success" style="padding: 5px 0px; width: 100%;" href="{{ path_for('view.table') }}/{{ data.tb_id }}">View Table</a></td>
     </tr>
     {% endfor %}
   </table>

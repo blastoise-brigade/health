@@ -58,8 +58,7 @@ class AuthController extends BaseController {
 
   public function verifyEmailAddress($request, $response, $args) {
     $email = $request->getParam('email');
-    $user = $this->db->table("user")->where("email", $email)->get();
-    $userCount = count($user);
+    $userCount = $this->db->table("user")->where("email", $email)->count();
     if ($userCount == 1) {
       $function = $this->generateRandomString();
       $this->db->table("user")->where("email", $email)->update(["token" => $function]);
