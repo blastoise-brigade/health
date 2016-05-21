@@ -2,6 +2,8 @@
 
 $app->get('/', "HomeController:showHome")->setName("home");
 
+$app->get('/herokuSetup', "HerokuSetupController:startSetup")->setName("home");
+
 $app->group("", function () {
   $this->get('/login', "AuthController:showLoginForm")->setName("auth.signin");
   $this->post('/login', "AuthController:verifyEmailAddress");

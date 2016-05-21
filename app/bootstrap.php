@@ -59,6 +59,10 @@ $container['DataViewController'] = function ($c) {
   return new \App\Controllers\DataViewController($c);
 };
 
+$container['HerokuSetupController'] = function ($c) {
+  return new \App\Controllers\HerokuSetupController($c);
+};
+
 $container['HomeController'] = function ($c) {
   return new \App\Controllers\HomeController($c);
 };

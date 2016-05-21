@@ -12,5 +12,6 @@
   ],
   "addons": [
       "jawsdb:kitefin"
-  ]
+  ],
+  "success_url": "/herokuSetup"
 }
