@@ -1,7 +1,5 @@
 <?php
 
-$app->get('/', "HomeController:showHome")->setName("home");
-
 $app->get('/herokuSetup', "HerokuSetupController:startSetup")->setName("home");
 
 $app->group("", function () {
@@ -11,6 +9,7 @@ $app->group("", function () {
 })->add(new App\Middleware\GuestMiddleware($container));
 
 $app->group("", function () {
+  $app->get('/', "HomeController:showHome")->setName("home");
   $this->get("/logout", "AuthController:signout")->setName("auth.signout");
   $this->get("/table", "DataViewController:showSyncTable")->setName("view.table");
   $this->get("/table/{id}", "DataViewController:showRegTable");
