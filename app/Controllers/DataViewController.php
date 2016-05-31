@@ -36,7 +36,7 @@ class DataViewController extends BaseController {
   }
 
   public function showRegTable($request, $response, $arguments) {
-    
+
     $id = $request->getAttribute('id');
     $syncTableInitCount = \App\Models\SyncModel::where("id", $id)->count();
     if ($syncTableInitCount == 1) {
@@ -60,7 +60,7 @@ class DataViewController extends BaseController {
         ));
         $i++;
       }
-      $i = 0;
+      $i = 1;
       foreach ($medContent as $data) {
         $city = $this->db->table("meta_city")->where("cid", $data->city_code)->first();
         $province = $this->db->table("meta_province")->where("pid", $data->province_code)->first();
