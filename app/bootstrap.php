@@ -63,6 +63,11 @@ $container['HerokuSetupController'] = function ($c) {
   return new \App\Controllers\HerokuSetupController($c);
 };
 
+$container['SearchController'] = function ($c) {
+  return new \App\Controllers\SearchController($c);
+};
+
+
 $container['HomeController'] = function ($c) {
   return new \App\Controllers\HomeController($c);
 };

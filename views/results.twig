@@ -1,0 +1,10 @@
+{% extends "partials/adminBase.twig" %}
+{% block content %}
+
+<section class='success' id='Search'>
+  <h1>Search Results</h1>
+  {% for data in data %}
+  {{ data }}<br>
+  {% endfor %}
+</section>
+{% endblock %}

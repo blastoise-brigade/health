@@ -10,6 +10,8 @@ $app->group("", function () {
 
 $app->group("", function () {
   $this->get('/', "HomeController:showHome")->setName("home");
+  $this->get('/search', "SearchController:showMain")->setName("search");
+  $this->post('/search', "SearchController:searchQuery")->setName("search");
   $this->get("/logout", "AuthController:signout")->setName("auth.signout");
   $this->get("/table", "DataViewController:showSyncTable")->setName("view.table");
   $this->get("/table/{id}", "DataViewController:showRegTable");
