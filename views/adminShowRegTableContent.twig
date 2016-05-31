@@ -24,5 +24,28 @@
     </tr>
     {% endfor %}
   </table>
+  <br><h1>Viewing Medication Data</h1></br>
+  <table class='table table-hover table-bordered'>
+    <tr style='background-color: #222;'>
+      <th>ID</th>
+      <th>Generic Name</th>
+      <th>Brand Name</th>
+      <th>Total Quantity</th>
+      <th>City</th>
+      <th>Province</th>
+      <th>Region</th>
+    </tr>
+    {% for data in medData %}
+    <tr>
+      <td>{{ data.id }}</td>
+      <td>{{ data.generic_name }}</td>
+      <td>{{ data.brand_name }}</td>
+      <td>{{ data.quantity }}</td>
+      <td>{{ data.city }}</td>
+      <td>{{ data.province }}</td>
+      <td>{{ data.region }}</td>
+    </tr>
+    {% endfor %}
+  </table>
 </section>
 {% endblock %}

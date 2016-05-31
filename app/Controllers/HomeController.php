@@ -5,8 +5,6 @@ namespace App\Controllers;
 class HomeController extends BaseController {
 
   public function showHome($request, $response, $args) {
-    $this->flash->addMessage('error', 'Your account has been suspended.');
-    $this->flash->addMessage('warning', 'We are going to be performing a maintenance update.');
     $messages = $this->flash->getMessages();
     if (count($messages) != 0) {
       $messageArray = AuthController::formFlashArray($messages);
