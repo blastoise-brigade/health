@@ -92,7 +92,7 @@
         a = 1;
         var xhttp = new XMLHttpRequest();
         document.getElementById("demo").innerHTML = "<i class='fa fa-refresh fa-spin' aria-hidden='true'></i> Syncing...";
-        xhttp.open("GET", "./shineossync.php", true);
+        xhttp.open("GET", "./shine", true);
         xhttp.send();
         setTimeout(function () {
           document.getElementById("demo").innerHTML = "<i class='fa fa-check-square-o' aria-hidden='true'></i> Success.";

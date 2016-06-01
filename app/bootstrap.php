@@ -67,6 +67,11 @@ $container['SearchController'] = function ($c) {
   return new \App\Controllers\SearchController($c);
 };
 
+$container['shineos'] = function ($c) {
+  $client = new GuzzleHttp\Client;
+  return new \App\Services\ShineOS($client, $c);
+};
+
 
 $container['HomeController'] = function ($c) {
   return new \App\Controllers\HomeController($c);
